@@ -6,6 +6,7 @@
 #define HEADER_H
 
 #include <iostream>
+#include <fstream>
 
 using namespace std;
 

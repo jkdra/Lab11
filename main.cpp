@@ -19,10 +19,13 @@ using namespace std;
  */
 
 // main
-int main()
-{
+int main() {
 
-    int m, n;  // INPUT - two integers the user wants to find the GCD of.
+    int m, n;          // INPUT - two integers the user wants to find the GCD of.
+    ofstream outFile;  // OUTPUT - the GCD of the two integers.
+
+    // Initialize the output file
+    outFile.open("OFile.txt");
 
     // Print Header
     cout << " * AUTHOR : Jawad Khadra" << endl;
@@ -35,14 +38,19 @@ int main()
 
     do {
         // Get input
-        cout << "Enter ";
+        cout << "Enter the first integer (0 to exit): ";
+        cin >> m;
 
-        // Call GCD function
-        int gcd = gcd(m, n);
+        if (m == 0) break;
 
-        // Print output
-        cout << "GCD of " << m << " and " << n << " is " << gcd << endl;
+        cout << "Enter the second integer:            ";
+        cin >> n;
 
+        outFile << "The GCD for " << m << " & " << n << " = " << gcd(m, n) << endl << endl;
+
+        cout << endl;
     } while (m != 0);
+
+    cout << "\n\nThank you for using my GCD calculator!\n";
     return 0;
 }
